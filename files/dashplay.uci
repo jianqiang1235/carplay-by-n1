@@ -1,0 +1,26 @@
+# carplay-by-n1 默认配置
+# 改完执行：uci commit dashplay && /etc/init.d/dashplay restart
+# LuCI 里的位置：服务 → DashPlay
+
+config dashplay 'main'
+	option enabled '1'
+	# 热点选择：auto 表示自动挑一个可用的 Wi-Fi 交给 iPhone
+	option wifi 'auto'
+	option external_security 'wpa2'
+	option external_network 'lan'
+	option settings_port '18080'
+	option name 'dashplay.lan'
+	option idle_release '300'
+	option public_ipv6 '0'
+	# 特斯拉专用共享网段：会把盒子自己的 LAN 搬到 100.96.0.1/24，192.168.1.2 失效
+	# N1 这根线用 192.168.1.x 就能出画，保持关闭
+	option shared_lan '0'
+	option car_music '0'
+	option car_voice '0'
+	option car_audio_split '1'
+	option tesla_mode '0'
+	option answer_tesla_checks 'auto'
+	option ddns_provider 'duckdns'
+	option viewer_port '18443'
+	# 关键：关掉在线升级检查。升级会整体替换 /opt/dashplay，四条补丁会一起丢
+	option update_check '0'

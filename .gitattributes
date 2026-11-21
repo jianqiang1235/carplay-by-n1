@@ -1,0 +1,8 @@
+# 一律用 LF，Linux 上的 shell 脚本绝不能带 CR
+* text=auto eol=lf
+
+*.sh   text eol=lf
+*.ini  text eol=lf
+*.init text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf

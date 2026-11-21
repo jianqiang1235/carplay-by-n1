@@ -1,0 +1,22 @@
+# 认证文件绝对不能提交
+identity/
+*.pk8
+*.p7b
+*.p12
+*.key
+*.pem
+
+# 下载的包与运行状态
+*.tar
+*.tar.gz
+*.apk
+*.img
+*.xz
+state/
+__pycache__/
+*.pyc
+
+# 本地记录
+*.local.md
+.DS_Store
+Thumbs.db
